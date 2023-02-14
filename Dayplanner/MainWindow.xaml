@@ -1,0 +1,19 @@
+﻿<Window x:Class="Dayplanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dayplanner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgdayplanner" FontSize="15" Loaded="dgdayplanner_Loaded" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=IsName}" Header="Название" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path=creationdata}" Header="Дата создания" Width="180"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsDone, UpdateSourceTrigger=PropertyChanged}" Header="Выполнение" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Path=Text}" Header="Описание" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
